@@ -1,0 +1,40 @@
+@import './../styles/_mixins.sass'
+
+.dark 
+  @include themed 
+    color: t(colorText)
+    background: t(bg)
+
+.light
+  @include themed 
+    color: t(colorText)
+    background: t(bg)
+
+.layoutContainer
+  gap: 50px 0
+  display: grid
+  min-height: 100vh
+  grid-template-rows: auto 1fr auto
+  grid-template-columns: auto minmax(320px, 1200px) auto
+  grid-template-areas: 'header header header' '. body .' 'footer footer footer'
+  
+.header
+  grid-area: header
+
+.sidebar
+  grid-area: sidebar
+
+.layoutMain
+  grid-area: body
+
+.footer
+  grid-area: footer
+
+@include response(md) 
+  .layoutContainer
+    grid-template-columns: 1fr 
+    grid-template-areas: 'header' 'body' 'footer'
+
+  .sidebar
+    display: none
+

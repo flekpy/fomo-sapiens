@@ -1,0 +1,59 @@
+@import '../../styles/_mixins.sass'
+
+.header
+  top: 0
+  z-index: 20
+  height: 60px
+  display: flex
+  padding: 0 30px
+  position: sticky
+  align-items: center
+  justify-content: space-between
+  @include themed 
+    background: t(bg)
+    border-bottom: 1px solid t(borderColor)
+
+.btn
+  width: 30px
+  height: 30px
+
+.btnHidden
+  display: none
+
+.mobileSideBar
+  display: none
+
+.navWrapper
+  display: flex
+  align-items: center
+
+.btnPadding
+  margin-left: 8px
+
+.logoWrapper
+  height: 50px
+  display: flex
+  max-width: 200px
+
+@include response(md) 
+  .btnHidden
+    display: block
+
+  .mobileSideBar 
+    transition: transform .2s ease
+    transform: translateX(-100%)
+    background: var(--deep-blue)
+    position: fixed
+    display: block
+    width: 270px
+    z-index: 10
+    top: 60px
+    bottom: 0
+    left: 0
+
+  .sideBarOpen
+    transform: translateX(0)
+
+  .navWrapper
+    .navHidden
+      display: none

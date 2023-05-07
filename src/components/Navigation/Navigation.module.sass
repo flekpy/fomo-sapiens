@@ -1,0 +1,38 @@
+@import '../../styles/_mixins.sass'
+
+.nav
+  margin: 0
+  padding-bottom: 5px
+  @include response(md)
+    padding:  0
+
+.ul
+  margin: 0
+  padding: 0
+  list-style: none
+  display: flex
+  @include themed
+    color: t(colorText)
+  @include response(md)
+    display: block
+    .li
+      padding: 10px 0 10px 30px
+
+  
+.li
+  font-size: 17px
+  font-weight: 700
+  &:not(:last-child)
+    padding-right: 20px
+  a
+    text-decoration: none
+    @include themed
+      color: t(colorText)
+      &:hover
+        color: t(hoverText)
+
+.liActive
+  a
+    @include themed
+      color: t(activeText)
+  

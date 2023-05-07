@@ -1,0 +1,26 @@
+@import '../../styles/_mixins.sass'
+
+.logoWrapper
+  display: flex
+  align-items: center
+  text-decoration: none
+  
+.logoIconWrapper
+  width: 40px
+  height: 40px
+  margin-right: 12px
+
+.logoText
+  font-size: 18px
+  font-weight: bold
+  text-align: center
+  @include themed
+    color: t(colorText)
+
+
+@include response(md) 
+  .logoText
+    display: none
+
+  .logoIconWrapper
+    margin-right: 5px
